@@ -1,0 +1,45 @@
+{% extends 'stures/base.html' %}
+{% block title %} Index page {% endblock %}
+{% load static %}
+
+{% block body %}
+
+    <header class="masthead">
+      <div class="header-content">
+        <div class="header-content-inner">
+          <h1 id="homeHeading">Teccol!: Your Online College for Tech lessons</h1>
+          <hr>
+          <p>We foresee a future founded on interconnectivity, ruled by Speed and Tech. We prepare you for that future. There is no need to worry: we are here for you!</p>
+          <p>to get started checkout our student and resource sections below </p>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="{% url 'stures:student' %}">Students</a>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#resource">Resource Center</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="resource">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <hr class="light">
+            <p class="text-faded">Teccol has a whole lot of resources as part of our student support system.</p>
+              <ul>
+                  <li>
+                      <a class="btn btn-default btn-xl js-scroll-trigger" href="#">learning aids</a>
+                  </li>
+                  <li>
+                      <a class="btn btn-default btn-xl js-scroll-trigger" href="#">visit our library</a>
+                  </li>
+                  <li>
+                      <a class="btn btn-default btn-xl js-scroll-trigger" href="#">get materials</a>
+                  </li>
+              </ul>
+            <p class="text-faded">You can also add a resource</p>
+            <a class="btn btn-default btn-xl js-scroll-trigger" href="{% url 'stures:resource' %}">Create Resource!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

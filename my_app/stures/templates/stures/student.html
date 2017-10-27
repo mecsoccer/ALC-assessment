@@ -1,0 +1,31 @@
+{% extends 'stures/base.html' %}
+{% block title %} Index page {% endblock %}
+{% load static %}
+
+{% block body %}
+
+  <div>
+    <div>
+        <h1>get to know our students</h1>
+    </div>
+    <ul>
+        {% for stud in object_list %}
+            <li><img src="{{ stud.passport.url }}" width="100px" height="100px" ><a href="{% url 'stures:detail' stud.id %}">{{ stud.name }}: {{ stud.sex }}</a>
+                <span>
+                    <form method="post" action="{% url 'stures:update' stud.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success">update</button>
+                    </form>
+                </span>
+                <span>
+                    <form method="post" action="{% url 'stures:delete' stud.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">delete</button>
+                    </form>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}

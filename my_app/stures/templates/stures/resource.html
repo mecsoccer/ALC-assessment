@@ -1,0 +1,26 @@
+{% extends 'stures/base.html' %}
+{% block title %} Students' resource {% endblock %}
+{% load static %}
+
+{% block body %}
+
+    <ul>
+        {% for res in object_list %}
+            <li><img src="{{ res.image.url }}"><a href="{% url 'stures:detail' res.id %}">{{ res.name }}: {{ res.sex }}</a>
+                <span>
+                    <form method="post" action="{% url 'stures:update' res.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-success">update</button>
+                    </form>
+                </span>
+                <span>
+                    <form method="post" action="{% url 'stures:delete' res.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">delete</button>
+                    </form>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
