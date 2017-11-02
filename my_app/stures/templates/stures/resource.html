@@ -4,9 +4,13 @@
 
 {% block body %}
 
+    <div>
+        <h1>a list of available resources</h1>
+    </div>
+
     <ul>
         {% for res in object_list %}
-            <li><img src="{{ res.image.url }}"><a href="{% url 'stures:detail' res.id %}">{{ res.name }}: {{ res.sex }}</a>
+            <li><a href="{% url 'stures:detail' res.id %}">{{ res.author }}: {{ res.topic }}</a>
                 <span>
                     <form method="post" action="{% url 'stures:update' res.id %}" style="display:inline;">
                         {% csrf_token %}
