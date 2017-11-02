@@ -5,8 +5,10 @@ app_name = 'stures'
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^about/$', views.about, name='about'),
     url(r'^student/$', views.StudentView.as_view(), name='student'),
     url(r'^resource/$', views.ResourceView.as_view(), name='resource'),
+    url(r'^add_res/$', views.ResourceCreate.as_view(), name='add_res'),
     url(r'^detail/(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
     url(r'^add_stud/$', views.StudentCreate.as_view(), name='add_stud'),
     url(r'^detail/(?P<pk>[0-9]+)/update/$', views.StudentUpdate.as_view(), name='update'),
