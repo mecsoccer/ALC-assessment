@@ -11,6 +11,10 @@ html {
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif; }
 
+.ontainer{
+  padding-bottom: 5%;
+}
+
 hr {
   max-width: 50px;
   border-width: 3px;
@@ -20,7 +24,7 @@ hr.light {
   border-color: white; }
 
 a {
-  color: #F05F40;
+  color: #008b8b;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s; }
