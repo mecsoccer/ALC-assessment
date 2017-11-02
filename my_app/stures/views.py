@@ -11,17 +11,16 @@ def index(request):
     return render(request, 'stures/index.html')
 
 
+def about(request):
+    return render(request, 'stures/about.html')
+
+
 class StudentView(generic.ListView):
     template_name = 'stures/student.html'
     context_object_name = 'object_list'
 
     def get_queryset(self):
         return Student.objects.all()
-
-
-class DetailView(generic.DetailView):
-    model = Student
-    template_name = 'stures/detail.html'
 
 
 class ResourceView(generic.ListView):
@@ -33,7 +32,12 @@ class ResourceView(generic.ListView):
 
 
 class DetailView(generic.DetailView):
-    pass
+    model = Resource
+    template_name = 'stures/detail.html'
+    context_object_name = 'res'
+
+    def get_queryset(self):
+        return Resource.objects.all()
 
 
 class StudentCreate(CreateView):
@@ -48,5 +52,9 @@ class StudentUpdate(UpdateView):
 
 class StudentDelete(DeleteView):
     model = Student
-    success_url = reverse_lazy('stures:index')
+    success_url = reverse_lazy('stures:student')
 
+
+class ResourceCreate(CreateView):
+    model = Resource
+    fields = ['type', 'author', 'topic', 'content', 'date']
