@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'rango/base.html' %}
+{% block title %} weaner details {% endblock %}
+{% load static %}
 
-</body>
-</html>
+{% block body %}
+
+    <img src="{% static 'rango/images/rango.jpg' %}" alt="weaner picture" style="width: 250px;">
+
+        <h1>seller: {{ pigs.vendor }}</h1>
+        <h2>{{ pigs.number }} weaners of {{ pigs.age_in_weeks }} weeks old</h2>
+
+{% endblock %}
