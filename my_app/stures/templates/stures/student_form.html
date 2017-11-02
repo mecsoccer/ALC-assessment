@@ -1,0 +1,18 @@
+{% extends 'stures/base.html' %}
+{% block title %} Add student to the database{% endblock %}
+{% load static %}
+
+{% block body %}
+    <div>
+        <h1>register a new student in the form below</h1>
+    </div>
+    <div>
+        <form class="form-horizontal" method="post" action="/stures/add_stud/" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include 'stures/form-template.html' %}
+            <div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
