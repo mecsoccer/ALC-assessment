@@ -32,11 +32,11 @@
                       <a class="btn btn-default btn-xl js-scroll-trigger" href="#">visit our library</a>
                   </li>
                   <li>
-                      <a class="btn btn-default btn-xl js-scroll-trigger" href="#">get materials</a>
+                      <a class="btn btn-default btn-xl js-scroll-trigger" href="{% url 'stures:resource' %}">get materials</a>
                   </li>
               </ul>
             <p class="text-faded">You can also add a resource</p>
-            <a class="btn btn-default btn-xl js-scroll-trigger" href="{% url 'stures:resource' %}">Create Resource!</a>
+            <a class="btn btn-default btn-xl js-scroll-trigger" href="{% url 'stures:add_res' %}">Create Resource!</a>
           </div>
         </div>
       </div>
