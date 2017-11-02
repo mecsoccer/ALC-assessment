@@ -1,0 +1,17 @@
+{% extends 'stures/base.html' %}
+{% block title %} Create resource{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>add a new resource in the form below</h1>
+    </div>
+    <div>
+        <form class="form-horizontal" method="post" action="{% url 'stures:add_res' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include 'stures/form-template.html' %}
+            <div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
