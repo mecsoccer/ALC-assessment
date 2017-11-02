@@ -10,7 +10,7 @@
     </div>
     <ul>
         {% for stud in object_list %}
-            <li><img src="{{ stud.passport.url }}" width="100px" height="100px" ><a href="{% url 'stures:detail' stud.id %}">{{ stud.name }}: {{ stud.sex }}</a>
+            <li><img src="{{ stud.passport.url }}" width="100px" height="100px" ><a href="#">{{ stud.name }}: {{ stud.sex }}</a>
                 <span>
                     <form method="post" action="{% url 'stures:update' stud.id %}" style="display:inline;">
                         {% csrf_token %}

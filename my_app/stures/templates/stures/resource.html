@@ -5,24 +5,13 @@
 {% block body %}
 
     <div>
-        <h1>a list of available resources</h1>
+        <h3>Below is a list of available resources:</h3>
     </div>
 
     <ul>
         {% for res in object_list %}
-            <li><a href="{% url 'stures:detail' res.id %}">{{ res.author }}: {{ res.topic }}</a>
-                <span>
-                    <form method="post" action="{% url 'stures:update' res.id %}" style="display:inline;">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-success">update</button>
-                    </form>
-                </span>
-                <span>
-                    <form method="post" action="{% url 'stures:delete' res.id %}" style="display:inline;">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-danger">delete</button>
-                    </form>
-                </span>
+            <li>
+                <a href="{% url 'stures:detail' res.id %}">{{ res.author }}: {{ res.topic }}</a>
             </li>
         {% endfor %}
     </ul>

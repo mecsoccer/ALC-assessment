@@ -23,18 +23,8 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading text-white">We've got what you need!</h2>
             <hr class="light">
-            <p class="text-faded">Teccol has a whole lot of resources as part of our student support system.</p>
-              <ul>
-                  <li>
-                      <a class="btn btn-default btn-xl js-scroll-trigger" href="#">learning aids</a>
-                  </li>
-                  <li>
-                      <a class="btn btn-default btn-xl js-scroll-trigger" href="#">visit our library</a>
-                  </li>
-                  <li>
-                      <a class="btn btn-default btn-xl js-scroll-trigger" href="{% url 'stures:resource' %}">get materials</a>
-                  </li>
-              </ul>
+            <p class="text-faded">Teccol has a whole lot of resources as part of our student information system.</p>
+            <a class="btn btn-default btn-xl js-scroll-trigger" href="{% url 'stures:resource' %}">Resource List</a>
             <p class="text-faded">You can also add a resource</p>
             <a class="btn btn-default btn-xl js-scroll-trigger" href="{% url 'stures:add_res' %}">Create Resource!</a>
           </div>
